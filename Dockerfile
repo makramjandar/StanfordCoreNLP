@@ -37,7 +37,7 @@ COPY --from=builder /opt/corenlp .
 ADD mj.jks .
 
 ENV JAVA_XMX 4g
-ENV PORT 9000
+ENV PORT 443
 EXPOSE $PORT
 
 CMD java -Xmx$JAVA_XMX -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -ssl true -key mj.jks -port 443 -timeout 15000
