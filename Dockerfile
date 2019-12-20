@@ -33,4 +33,4 @@ ADD keystore.jks .
 RUN chmod 444 keystore.jks
 EXPOSE 8443
 
-CMD java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer --ssl false --key keystore.jks --port 8443 --timeout 15000
+CMD java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer --ssl true --key keystore.jks --port 8443 --timeout 15000
