@@ -29,7 +29,7 @@ FROM alpine:3.8
 RUN apk update && apk add openjdk8-jre-base
 WORKDIR /opt/corenlp
 COPY --from=builder /opt/corenlp .
-ADD mj.jks .
+ADD keystore.jks .
 RUN chmod 444 keystore.jks
 EXPOSE 8443
 
