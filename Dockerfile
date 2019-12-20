@@ -30,6 +30,7 @@ RUN apk update && apk add openjdk8-jre-base
 WORKDIR /opt/corenlp
 COPY --from=builder /opt/corenlp .
 ADD mj.jks .
-EXPOSE 443
+RUN chmod 444 mj.jks
+EXPOSE 8443
 
-CMD java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer --ssl true --key mj.jks --port 443 --timeout 15000
+CMD java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer --ssl true --key mj.jks --port 8443 --timeout 15000
