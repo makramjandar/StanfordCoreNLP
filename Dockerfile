@@ -33,4 +33,4 @@ ADD mj.jks .
 RUN chmod 444 mj.jks
 EXPOSE 8443
 
-CMD java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer --ssl true --key mj.jks --port 8443 --timeout 15000
+CMD java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer --ssl false --key mj.jks --port 8443 --timeout 15000
